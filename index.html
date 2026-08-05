@@ -5,15 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Infinity Entertainment</title>
 <link rel="icon" type="image/png" href="webLogo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="abstract-bg"></div>
+
 <header>
 <div class="logo nav-trigger" data-target="view-home">INFINITY ENTERTAINMENT</div>
 <nav>
 <a href="#" class="nav-trigger" data-target="view-all-news">News</a>
 <a href="#" class="nav-trigger" data-target="view-all-games">Games</a>
-<a href="#contact">Contact</a>
+<a href="#" class="nav-trigger" data-target="view-about">About</a>
 </nav>
 </header>
 <main>
@@ -25,7 +28,23 @@
 <p class="hero-text">Czech Independent Game Development Studio</p>
 </div>
 </section>
-<section id="news">
+
+<section id="featured-game" class="reveal">
+<div class="featured-bg">
+<video autoplay loop muted playsinline class="hero-video">
+<source src="trailer.mp4" type="video/mp4">
+</video>
+<div class="featured-overlay"></div>
+</div>
+<div class="featured-content">
+<span class="badge badge-highlight">Out Now</span>
+<h2>HAUNTMATES</h2>
+<p>Cooperative multiplayer investigation horror where you must work together to survive.</p>
+<a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-primary">Play on Steam</a>
+</div>
+</section>
+
+<section id="news" class="reveal">
 <div class="section-header">
 <h2>Latest Update</h2>
 <a href="#" class="btn-sm nav-trigger" data-target="view-all-news">View All &rarr;</a>
@@ -37,13 +56,14 @@
 <span class="btn-text">Read full article &rarr;</span>
 </div>
 </section>
+
 <section id="games">
-<div class="section-header">
+<div class="section-header reveal">
 <h2>Latest Games</h2>
 <a href="#" class="btn-sm nav-trigger" data-target="view-all-games">View All &rarr;</a>
 </div>
 <div class="game-grid">
-<div class="game-card">
+<div class="game-card reveal">
 <div class="mystery-cover">?</div>
 <div class="game-info">
 <span class="badge badge-upcoming">Coming Soon</span>
@@ -51,7 +71,7 @@
 <span class="btn btn-disabled">Coming Soon to Steam</span>
 </div>
 </div>
-<div class="game-card">
+<div class="game-card reveal">
 <div class="game-cover-frame">
 <img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
 </div>
@@ -61,7 +81,7 @@
 <a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
-<div class="game-card">
+<div class="game-card reveal">
 <div class="game-cover-frame">
 <img src="hauntmates.jpg" alt="Hauntmates" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
 </div>
@@ -75,10 +95,48 @@
 </section>
 </div>
 
+<div id="view-about" class="view-section page-detail">
+<a href="#" class="btn-text nav-trigger back-link reveal" data-target="view-home">&larr; Back to Home</a>
+<h1 class="reveal">About Infinity Entertainment</h1>
+<div class="content reveal">
+<p>We are a two-man indie game studio from the Czech Republic. We each have our main areas of focus, but everything else—like sound design, audio production, and the overall atmosphere of our projects—is something we figure out and build together.</p>
+
+<div class="team-grid">
+<div class="team-member reveal">
+<div class="member-avatar">F</div>
+<div class="member-info">
+<h3>František Svoboda</h3>
+<span class="role">Programming & Game Design</span>
+<p>Short bio and personal description will be added here.</p>
+</div>
+</div>
+
+<div class="team-member reveal">
+<div class="member-avatar">T</div>
+<div class="member-info">
+<h3>Tobiáš Štefl</h3>
+<span class="role">3D Art & Game Design</span>
+<p>Short bio and personal description will be added here.</p>
+</div>
+</div>
+</div>
+
+<h2 class="reveal">Contact & Community</h2>
+<p class="reveal">If you want to get in touch with us, shoot us an email at <strong>infinityentertainment80@gmail.com</strong>.</p>
+<div class="social-links reveal">
+<a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon"><i class="fa-brands fa-steam"></i></a>
+<a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+<a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+
+</div>
+</div>
+
 <div id="view-all-news" class="view-section">
-<a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h2>All News Archive</h2>
-<div class="news-item nav-trigger" data-target="view-news-1">
+<a href="#" class="btn-text nav-trigger back-link reveal" data-target="view-home">&larr; Back to Home</a>
+<h2 class="reveal">All News Archive</h2>
+<div class="news-item nav-trigger reveal" data-target="view-news-1">
 <h3>Welcome to our website</h3>
 <span class="date">August 5, 2026</span>
 <p>We finally put together a proper home for all our games and updates so everything is right here in one place.</p>
@@ -87,10 +145,10 @@
 </div>
 
 <div id="view-all-games" class="view-section">
-<a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h2>All Games Archive</h2>
+<a href="#" class="btn-text nav-trigger back-link reveal" data-target="view-home">&larr; Back to Home</a>
+<h2 class="reveal">All Games Archive</h2>
 <div class="game-grid">
-<div class="game-card">
+<div class="game-card reveal">
 <div class="mystery-cover">?</div>
 <div class="game-info">
 <span class="badge badge-upcoming">Coming Soon</span>
@@ -98,7 +156,7 @@
 <span class="btn btn-disabled">Coming Soon to Steam</span>
 </div>
 </div>
-<div class="game-card">
+<div class="game-card reveal">
 <div class="game-cover-frame">
 <img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
 </div>
@@ -108,7 +166,7 @@
 <a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
-<div class="game-card">
+<div class="game-card reveal">
 <div class="game-cover-frame">
 <img src="hauntmates.jpg" alt="Hauntmates" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
 </div>
@@ -118,7 +176,7 @@
 <a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-platform">View on Steam</a>
 </div>
 </div>
-<div class="game-card">
+<div class="game-card reveal">
 <div class="game-cover-frame">
 <img src="lastcure.jpg" alt="The Last Cure" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
 </div>
@@ -128,7 +186,7 @@
 <a href="https://infinity-entertainment.itch.io/the-last-cure" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
-<div class="game-card">
+<div class="game-card reveal">
 <div class="game-cover-frame">
 <img src="apartment57.jpg" alt="The Apartment 57" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: 0%;">
 </div>
@@ -142,24 +200,30 @@
 </div>
 
 <div id="view-news-1" class="view-section page-detail">
-<a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h1>Welcome to our website</h1>
-<span class="date">August 5, 2026</span>
-<div class="content">
+<a href="#" class="btn-text nav-trigger back-link reveal" data-target="view-home">&larr; Back to Home</a>
+<h1 class="reveal">Welcome to our website</h1>
+<span class="date reveal">August 5, 2026</span>
+<div class="content reveal">
 <p>Finally we got our own website up and running. Everything we make is now right here in one place so you can easily check out all our games and updates without searching around.</p>
 <p>Thanks for sticking with us and supporting what we do. We are constantly working on new projects and we cannot wait to share more soon.</p>
 <p>František Svoboda<br>Infinity Entertainment</p>
 </div>
 </div>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: infinityentertainment80@gmail.com</p>
-</section>
-
 </main>
 <footer>
-<p>2026 Infinity Entertainment</p>
+<div class="footer-content">
+<div class="footer-logo">INFINITY ENTERTAINMENT</div>
+<div class="social-links">
+<a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon"><i class="fa-brands fa-steam"></i></a>
+<a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+<a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Infinity Entertainment</p>
+</div>
 </footer>
 
 <script>
@@ -175,6 +239,7 @@ function switchView(targetId, pushHistory = true) {
             currentActive.classList.remove('active', 'fade-out');
             targetSection.classList.add('fade-in', 'active');
             window.scrollTo({ top: 0, behavior: 'instant' });
+            triggerReveals(targetSection);
             setTimeout(() => {
                 targetSection.classList.remove('fade-in');
             }, 300);
@@ -182,6 +247,7 @@ function switchView(targetId, pushHistory = true) {
     } else {
         targetSection.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'instant' });
+        triggerReveals(targetSection);
     }
 
     if (pushHistory) {
@@ -202,12 +268,31 @@ window.addEventListener('popstate', function(event) {
     switchView(targetId, false);
 });
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        } else {
+            entry.target.classList.remove('is-visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+function triggerReveals(container) {
+    container.querySelectorAll('.reveal').forEach(el => {
+        el.classList.remove('is-visible');
+        setTimeout(() => observer.observe(el), 50);
+    });
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     if (window.location.hash) {
         const targetId = window.location.hash.substring(1);
         if (document.getElementById(targetId)) {
             switchView(targetId, false);
         }
+    } else {
+        triggerReveals(document.getElementById('view-home'));
     }
 });
 </script>
