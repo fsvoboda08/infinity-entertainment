@@ -19,23 +19,28 @@
 
 <div id="view-home" class="view-section active">
 <section id="hero">
+<div class="hero-content">
 <img src="logo.png" alt="Infinity Entertainment Logo" class="hero-logo">
 <p class="hero-text">Czech Independent Game Development Studio</p>
+</div>
 </section>
 <section id="news">
+<div class="section-header">
 <h2>Latest Update</h2>
-<div class="news-item">
-<h3>Welcome to Infinity Entertainment</h3>
-<span class="date">August 5, 2026</span>
-<p>Our new website is live. We are currently working hard on finalizing our upcoming titles.</p>
-<a href="#" class="btn-text nav-trigger" data-target="view-news-1">Read full article &rarr;</a>
+<a href="#" class="btn-sm nav-trigger" data-target="view-all-news">View All &rarr;</a>
 </div>
-<div class="center-action">
-<a href="#" class="btn btn-view-all nav-trigger" data-target="view-all-news">View All News &rarr;</a>
+<div class="news-item nav-trigger" data-target="view-news-1">
+<h3>Welcome to our website</h3>
+<span class="date">August 5, 2026</span>
+<p>We finally put together a proper home for all our games and updates so everything is right here in one place.</p>
+<span class="btn-text">Read full article &rarr;</span>
 </div>
 </section>
 <section id="games">
+<div class="section-header">
 <h2>Latest Games</h2>
+<a href="#" class="btn-sm nav-trigger" data-target="view-all-games">View All &rarr;</a>
+</div>
 <div class="game-grid">
 <div class="game-card">
 <div class="mystery-cover">?</div>
@@ -50,7 +55,7 @@
 <img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
 </div>
 <div class="game-info">
-<span class="badge badge-development">In Development</span>
+<span class="badge badge-released">Released</span>
 <h3>SCARECROWED</h3>
 <a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
@@ -66,20 +71,17 @@
 </div>
 </div>
 </div>
-<div class="center-action">
-<a href="#" class="btn btn-view-all nav-trigger" data-target="view-all-games">View All Games &rarr;</a>
-</div>
 </section>
 </div>
 
 <div id="view-all-news" class="view-section">
 <a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h2>All News</h2>
-<div class="news-item">
-<h3>Welcome to Infinity Entertainment</h3>
+<h2>All News Archive</h2>
+<div class="news-item nav-trigger" data-target="view-news-1">
+<h3>Welcome to our website</h3>
 <span class="date">August 5, 2026</span>
-<p>Our new website is live. We are currently working hard on finalizing our upcoming titles.</p>
-<a href="#" class="btn-text nav-trigger" data-target="view-news-1">Read full article &rarr;</a>
+<p>We finally put together a proper home for all our games and updates so everything is right here in one place.</p>
+<span class="btn-text">Read full article &rarr;</span>
 </div>
 </div>
 
@@ -100,7 +102,7 @@
 <img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
 </div>
 <div class="game-info">
-<span class="badge badge-development">In Development</span>
+<span class="badge badge-released">Released</span>
 <h3>SCARECROWED</h3>
 <a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
@@ -122,7 +124,7 @@
 <div class="game-info">
 <span class="badge badge-released">Released</span>
 <h3>The Last Cure</h3>
-<a href="#" class="btn btn-platform">View Game</a>
+<a href="https://infinity-entertainment.itch.io/the-last-cure" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
 <div class="game-card">
@@ -132,7 +134,7 @@
 <div class="game-info">
 <span class="badge badge-released">Released</span>
 <h3>The Apartment 57</h3>
-<a href="#" class="btn btn-platform">View Game</a>
+<a href="https://infinity-entertainment.itch.io/the-apartment-57" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
 </div>
@@ -140,84 +142,12 @@
 
 <div id="view-news-1" class="view-section page-detail">
 <a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h1>Welcome to Infinity Entertainment</h1>
+<h1>Welcome to our website</h1>
 <span class="date">August 5, 2026</span>
 <div class="content">
-<p>Our new website is officially live. This space will serve as the central hub for all our game projects, updates, and studio announcements.</p>
-<p>We are currently heavily focused on expanding our portfolio with new atmospheric experiences. Stay tuned for more behind-the-scenes content.</p>
-</div>
-</div>
-
-<div id="view-hauntmates" class="view-section page-detail">
-<a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h1>HAUNTMATES</h1>
-<span class="badge badge-released">Released</span>
-<div class="detail-image-frame">
-<img src="hauntmates.jpg" alt="Hauntmates" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
-</div>
-<div class="content">
-<p>Experience true cooperative terror in this investigative horror game. Work together with your team to uncover dark secrets and survive the night.</p>
-<div class="action-buttons">
-<a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-platform">View on Steam</a>
-</div>
-</div>
-</div>
-
-<div id="view-scarecrowed" class="view-section page-detail">
-<a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h1>SCARECROWED</h1>
-<span class="badge badge-development">In Development</span>
-<div class="detail-image-frame">
-<img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: 0%;">
-</div>
-<div class="content">
-<p>A gripping first-person psychological horror that will test your sanity.</p>
-<div class="action-buttons">
-<a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
-</div>
-</div>
-</div>
-
-<div id="view-dicing" class="view-section page-detail">
-<a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h1>Dicing with the Devil</h1>
-<span class="badge badge-upcoming">Coming Soon</span>
-<div class="mystery-cover detail-mystery">?</div>
-<div class="content">
-<p>A completely new take on the physical rogue-like genre using unique dice mechanics.</p>
-<div class="action-buttons">
-<span class="btn btn-disabled">Coming Soon to Steam</span>
-</div>
-</div>
-</div>
-
-<div id="view-lastcure" class="view-section page-detail">
-<a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h1>The Last Cure</h1>
-<span class="badge badge-released">Released</span>
-<div class="detail-image-frame">
-<img src="lastcure.jpg" alt="The Last Cure" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
-</div>
-<div class="content">
-<p>Fight for survival and uncover the truth in a world on the brink.</p>
-<div class="action-buttons">
-<a href="#" class="btn btn-platform">View Game</a>
-</div>
-</div>
-</div>
-
-<div id="view-apartment" class="view-section page-detail">
-<a href="#" class="btn-text nav-trigger back-link" data-target="view-home">&larr; Back to Home</a>
-<h1>The Apartment 57</h1>
-<span class="badge badge-released">Released</span>
-<div class="detail-image-frame">
-<img src="apartment57.jpg" alt="The Apartment 57" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: 0%;">
-</div>
-<div class="content">
-<p>Step inside a claustrophobic psychological nightmare where nothing is as it seems.</p>
-<div class="action-buttons">
-<a href="#" class="btn btn-platform">View Game</a>
-</div>
+<p>Finally we got our own website up and running. Everything we make is now right here in one place so you can easily check out all our games and updates without searching around.</p>
+<p>Thanks for sticking with us and supporting what we do. We are constantly working on new projects and we cannot wait to share more soon.</p>
+<p>František Svoboda<br>Infinity Entertainment</p>
 </div>
 </div>
 
@@ -228,7 +158,7 @@
 
 </main>
 <footer>
-<p>&copy; 2026 Infinity Entertainment</p>
+<p>2026 Infinity Entertainment</p>
 </footer>
 
 <script>
@@ -236,12 +166,22 @@ function switchView(targetId, pushHistory = true) {
     const targetSection = document.getElementById(targetId);
     if (!targetSection) return;
 
-    document.querySelectorAll('.view-section').forEach(section => {
-        section.classList.remove('active');
-    });
-    
-    targetSection.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const currentActive = document.querySelector('.view-section.active');
+
+    if (currentActive && currentActive !== targetSection) {
+        currentActive.classList.add('fade-out');
+        setTimeout(() => {
+            currentActive.classList.remove('active', 'fade-out');
+            targetSection.classList.add('fade-in', 'active');
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            setTimeout(() => {
+                targetSection.classList.remove('fade-in');
+            }, 300);
+        }, 150);
+    } else {
+        targetSection.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
 
     if (pushHistory) {
         history.pushState({ target: targetId }, '', '#' + targetId);
