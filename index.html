@@ -59,7 +59,7 @@
 
 <section id="games">
 <div class="section-header reveal">
-<h2>Latest Games</h2>
+<h2>Our Games</h2>
 <a href="#" class="btn-sm nav-trigger" data-target="view-all-games">View All &rarr;</a>
 </div>
 <div class="game-grid">
@@ -73,22 +73,22 @@
 </div>
 <div class="game-card reveal">
 <div class="game-cover-frame">
-<img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
-</div>
-<div class="game-info">
-<span class="badge badge-released">Released</span>
-<h3>SCARECROWED</h3>
-<a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
-</div>
-</div>
-<div class="game-card reveal">
-<div class="game-cover-frame">
 <img src="hauntmates.jpg" alt="Hauntmates" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
 </div>
 <div class="game-info">
 <span class="badge badge-released">Released</span>
 <h3>HAUNTMATES</h3>
 <a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-platform">View on Steam</a>
+</div>
+</div>
+<div class="game-card reveal">
+<div class="game-cover-frame">
+<img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
+</div>
+<div class="game-info">
+<span class="badge badge-released">Released</span>
+<h3>SCARECROWED</h3>
+<a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
 </div>
@@ -99,7 +99,7 @@
 <a href="#" class="btn-text nav-trigger back-link reveal" data-target="view-home">&larr; Back to Home</a>
 <h1 class="reveal">About Infinity Entertainment</h1>
 <div class="content reveal">
-<p>We are a two-man indie game studio from the Czech Republic. We each have our main areas of focus, but everything else—like sound design, audio production, and the overall atmosphere of our projects—is something we figure out and build together.</p>
+<p>We are two friends from the Czech Republic and we just love making games. We put everything into our projects, and our dream is to make this our full-time job so we can spend all our time building great experiences for you :)</p>
 
 <div class="team-grid">
 <div class="team-member reveal">
@@ -107,7 +107,7 @@
 <div class="member-info">
 <h3>František Svoboda</h3>
 <span class="role">Programming & Game Design</span>
-<p>Short bio and personal description will be added here.</p>
+<p>Hi, I'm František, Founder & CEO of Infinity Entertainment. I've loved games my whole life, and that passion eventually led me to start making them myself. Building them takes a ton of work, but the absolute best part is just watching people play and genuinely enjoy what we've created.</p>
 </div>
 </div>
 
@@ -158,22 +158,22 @@
 </div>
 <div class="game-card reveal">
 <div class="game-cover-frame">
-<img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
-</div>
-<div class="game-info">
-<span class="badge badge-released">Released</span>
-<h3>SCARECROWED</h3>
-<a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
-</div>
-</div>
-<div class="game-card reveal">
-<div class="game-cover-frame">
 <img src="hauntmates.jpg" alt="Hauntmates" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
 </div>
 <div class="game-info">
 <span class="badge badge-released">Released</span>
 <h3>HAUNTMATES</h3>
 <a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-platform">View on Steam</a>
+</div>
+</div>
+<div class="game-card reveal">
+<div class="game-cover-frame">
+<img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
+</div>
+<div class="game-info">
+<span class="badge badge-released">Released</span>
+<h3>SCARECROWED</h3>
+<a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
 <div class="game-card reveal">
@@ -281,6 +281,7 @@ const observer = new IntersectionObserver((entries) => {
 function triggerReveals(container) {
     container.querySelectorAll('.reveal').forEach(el => {
         el.classList.remove('is-visible');
+        observer.unobserve(el);
         setTimeout(() => observer.observe(el), 50);
     });
 }
