@@ -124,10 +124,10 @@
 <h2 class="reveal">Contact & Community</h2>
 <p class="reveal">If you want to get in touch with us, shoot us an email at <strong>infinityentertainment80@gmail.com</strong>.</p>
 <div class="social-links reveal">
-<a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon" aria-label="Steam"><i class="fa-brands fa-steam"></i></a>
-<a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-<a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+<a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon"><i class="fa-brands fa-steam"></i></a>
+<a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+<a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
 </div>
 
 </div>
@@ -215,10 +215,13 @@
 <div class="footer-content">
 <div class="footer-logo">INFINITY ENTERTAINMENT</div>
 <div class="social-links">
-<a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon" aria-label="Steam"><i class="fa-brands fa-steam"></i></a>
-<a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-<a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+<a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon"><i class="fa-brands fa-steam"></i></a>
+<a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+<a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+<svg id="snake-trigger-icon" onclick="startSnake()" viewBox="0 0 512 512" width="16" height="18">
+<path fill="currentColor" d="M192 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32v32h32c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H224c-17.7 0-32 14.3-32 32s14.3 32 32 32h128c53 0 96 43 96 96s-43 96-96 96H224c-53 0-96-43-96-96V288c0-53 43-96 96-96h96v-32H224c-35.3 0-64-28.7-64-64V64zm192 352a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM64 128c0-17.7 14.3-32 32-32h32v64H96c-17.7 0-32-14.3-32-32z"/>
+</svg>
 </div>
 </div>
 <div class="footer-bottom">
@@ -227,17 +230,31 @@
 </footer>
 
 <div id="snake-overlay">
-<span id="snake-close" onclick="closeSnake()">&times;</span>
-<div id="snake-score">SCORE: <span id="current-score">0</span></div>
-<canvas id="snake-canvas" width="400" height="400"></canvas>
-<p style="margin-top:20px; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Use Arrow Keys to play. Press Esc to close.</p>
+    <span id="snake-close" onclick="closeSnake()">&times;</span>
+    <div id="snake-score-board">
+        SCORE: <span id="current-score" style="color: #fff;">0</span> | HIGH SCORE: <span id="high-score" style="color: #0f0;">0</span>
+    </div>
+    <div class="crt-container">
+        <canvas id="snake-canvas" width="300" height="300"></canvas>
+    </div>
+    <p style="margin-top:20px; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Press ESC to exit.</p>
 </div>
 
 <script>
+function updateSnakeIconVisibility(targetId) {
+    const snakeIcon = document.getElementById('snake-trigger-icon');
+    if (snakeIcon) {
+        snakeIcon.style.display = (targetId === 'view-all-games') ? 'inline-block' : 'none';
+    }
+}
+
 function switchView(targetId, pushHistory = true) {
     const targetSection = document.getElementById(targetId);
     if (!targetSection) return;
     const currentActive = document.querySelector('.view-section.active');
+    
+    updateSnakeIconVisibility(targetId);
+
     if (currentActive && currentActive !== targetSection) {
         currentActive.classList.add('fade-out');
         setTimeout(() => {
@@ -291,14 +308,17 @@ function triggerReveals(container) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+    let initialTarget = 'view-home';
     if (window.location.hash) {
         const targetId = window.location.hash.substring(1);
         if (document.getElementById(targetId)) {
+            initialTarget = targetId;
             switchView(targetId, false);
         }
     } else {
         triggerReveals(document.getElementById('view-home'));
     }
+    updateSnakeIconVisibility(initialTarget);
 });
 
 const cards = document.querySelectorAll('.tilt-card');
@@ -318,34 +338,36 @@ const snakeOverlay = document.getElementById('snake-overlay');
 const canvas = document.getElementById('snake-canvas');
 const ctx = canvas.getContext('2d');
 const scoreEl = document.getElementById('current-score');
-const gridSize = 20;
+const highScoreEl = document.getElementById('high-score');
+
+const gridSize = 20; 
+const totalCells = 225;
+
 let snake = [];
 let food = {};
 let direction = 'right';
+let nextDirection = 'right';
 let score = 0;
+let highScore = localStorage.getItem('infinity_snake_highscore') || 0;
 let gameLoop;
 let isGameRunning = false;
-let inputPattern = "";
+
+highScoreEl.innerText = highScore;
 
 document.addEventListener('keydown', e => {
     if (isGameRunning) {
         if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) e.preventDefault();
         if (e.key === 'Esc' || e.key === 'Escape') closeSnake();
-    } else {
-        inputPattern += e.key.toLowerCase();
-        if (inputPattern.length > 8) inputPattern = inputPattern.slice(-8);
-        if (inputPattern === "infinity") startSnake();
     }
 });
 
 function startSnake() {
     if (isGameRunning) return;
-    inputPattern = "";
     isGameRunning = true;
     snakeOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
     resetGame();
-    gameLoop = setInterval(draw, 100);
+    gameLoop = setInterval(draw, 120); 
 }
 
 function closeSnake() {
@@ -356,39 +378,77 @@ function closeSnake() {
 }
 
 function resetGame() {
-    snake = [{ x: 10 * gridSize, y: 10 * gridSize }];
+    snake = [
+        { x: 7 * gridSize, y: 7 * gridSize },
+        { x: 6 * gridSize, y: 7 * gridSize },
+        { x: 5 * gridSize, y: 7 * gridSize }
+    ];
     direction = 'right';
+    nextDirection = 'right';
     score = 0;
     scoreEl.innerText = score;
     placeFood();
 }
 
 function placeFood() {
-    food = {
-        x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
-        y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
-    };
+    let onSnake = true;
+    let foodX, foodY;
+    
+    while (onSnake) {
+        foodX = Math.floor(Math.random() * 15) * gridSize;
+        foodY = Math.floor(Math.random() * 15) * gridSize;
+        
+        onSnake = false;
+        
+        for (let part of snake) {
+            if (part.x === foodX && part.y === foodY) {
+                onSnake = true;
+                break;
+            }
+        }
+    }
+    
+    food = { x: foodX, y: foodY };
 }
 
 document.addEventListener('keydown', e => {
     if (!isGameRunning) return;
-    if (e.key === 'ArrowUp' && direction !== 'down') direction = 'up';
-    if (e.key === 'ArrowDown' && direction !== 'up') direction = 'down';
-    if (e.key === 'ArrowLeft' && direction !== 'right') direction = 'left';
-    if (e.key === 'ArrowRight' && direction !== 'left') direction = 'right';
+    if (e.key === 'ArrowUp' && direction !== 'down') nextDirection = 'up';
+    if (e.key === 'ArrowDown' && direction !== 'up') nextDirection = 'down';
+    if (e.key === 'ArrowLeft' && direction !== 'right') nextDirection = 'left';
+    if (e.key === 'ArrowRight' && direction !== 'left') nextDirection = 'right';
 });
 
 function draw() {
-    ctx.fillStyle = '#060606';
+    direction = nextDirection;
+    
+    ctx.fillStyle = '#050505';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    for (let i = 0; i < snake.length; i++) {
-        ctx.fillStyle = (i === 0) ? '#ffffff' : '#888888';
-        ctx.fillRect(snake[i].x, snake[i].y, gridSize - 2, gridSize - 2);
+    ctx.strokeStyle = '#121212';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < canvas.width; i += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, canvas.height);
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(canvas.width, i);
+        ctx.stroke();
     }
     
-    ctx.fillStyle = '#ffffff';
-    ctx.fillRect(food.x, food.y, gridSize - 2, gridSize - 2);
+    ctx.fillStyle = '#f00';
+    ctx.fillRect(food.x, food.y, gridSize, gridSize);
+    
+    for (let i = 0; i < snake.length; i++) {
+        ctx.fillStyle = (i === 0) ? '#fff' : '#0a0';
+        ctx.fillRect(snake[i].x, snake[i].y, gridSize, gridSize);
+        
+        ctx.strokeStyle = '#050505';
+        ctx.strokeRect(snake[i].x, snake[i].y, gridSize, gridSize);
+    }
     
     let headX = snake[0].x;
     let headY = snake[0].y;
@@ -401,6 +461,24 @@ function draw() {
     if (headX === food.x && headY === food.y) {
         score++;
         scoreEl.innerText = score;
+        if (score > highScore) {
+            highScore = score;
+            localStorage.setItem('infinity_snake_highscore', highScore);
+            highScoreEl.innerText = highScore;
+        }
+        
+        if (snake.length === totalCells) {
+            clearInterval(gameLoop);
+            isGameRunning = false;
+            ctx.fillStyle = 'rgba(0, 255, 0, 0.7)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 30px monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText('YOU WIN!', canvas.width / 2, canvas.height / 2);
+            return;
+        }
+
         placeFood();
     } else {
         snake.pop();
@@ -410,12 +488,13 @@ function draw() {
     
     if (headX < 0 || headX >= canvas.width || headY < 0 || headY >= canvas.height || collision(newHead, snake)) {
         clearInterval(gameLoop);
-        setTimeout(() => {
-            alert('Game Over! Score: ' + score);
-            closeSnake();
-        }, 50);
+        ctx.fillStyle = 'rgba(255, 0, 0, 0.6)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        setTimeout(resetGame, 500);
+        setTimeout(() => { gameLoop = setInterval(draw, 120); }, 500);
         return;
     }
+    
     snake.unshift(newHead);
 }
 
