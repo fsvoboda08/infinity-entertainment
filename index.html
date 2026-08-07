@@ -63,7 +63,7 @@
 <a href="#" class="btn-sm nav-trigger" data-target="view-all-games">View All &rarr;</a>
 </div>
 <div class="game-grid">
-<div class="game-card reveal">
+<div class="game-card tilt-card reveal">
 <div class="mystery-cover">?</div>
 <div class="game-info">
 <span class="badge badge-upcoming">Coming Soon</span>
@@ -71,7 +71,7 @@
 <span class="btn btn-disabled">Coming Soon to Steam</span>
 </div>
 </div>
-<div class="game-card reveal">
+<div class="game-card tilt-card reveal">
 <div class="game-cover-frame">
 <img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
 </div>
@@ -81,7 +81,7 @@
 <a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
-<div class="game-card reveal">
+<div class="game-card tilt-card reveal">
 <div class="game-cover-frame">
 <img src="hauntmates.jpg" alt="Hauntmates" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
 </div>
@@ -148,7 +148,7 @@
 <a href="#" class="btn-text nav-trigger back-link reveal" data-target="view-home">&larr; Back to Home</a>
 <h2 class="reveal">All Games Archive</h2>
 <div class="game-grid">
-<div class="game-card reveal">
+<div class="game-card tilt-card reveal">
 <div class="mystery-cover">?</div>
 <div class="game-info">
 <span class="badge badge-upcoming">Coming Soon</span>
@@ -156,7 +156,7 @@
 <span class="btn btn-disabled">Coming Soon to Steam</span>
 </div>
 </div>
-<div class="game-card reveal">
+<div class="game-card tilt-card reveal">
 <div class="game-cover-frame">
 <img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
 </div>
@@ -166,7 +166,7 @@
 <a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
-<div class="game-card reveal">
+<div class="game-card tilt-card reveal">
 <div class="game-cover-frame">
 <img src="hauntmates.jpg" alt="Hauntmates" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
 </div>
@@ -176,7 +176,7 @@
 <a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-platform">View on Steam</a>
 </div>
 </div>
-<div class="game-card reveal">
+<div class="game-card tilt-card reveal">
 <div class="game-cover-frame">
 <img src="lastcure.jpg" alt="The Last Cure" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
 </div>
@@ -186,7 +186,7 @@
 <a href="https://infinity-entertainment.itch.io/the-last-cure" target="_blank" class="btn btn-platform">View on Itch.io</a>
 </div>
 </div>
-<div class="game-card reveal">
+<div class="game-card tilt-card reveal">
 <div class="game-cover-frame">
 <img src="apartment57.jpg" alt="The Apartment 57" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: 0%;">
 </div>
@@ -226,13 +226,18 @@
 </div>
 </footer>
 
+<div id="snake-overlay">
+<span id="snake-close" onclick="closeSnake()">&times;</span>
+<div id="snake-score">SCORE: <span id="current-score">0</span></div>
+<canvas id="snake-canvas" width="400" height="400"></canvas>
+<p style="margin-top:20px; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Use Arrow Keys to play. Press Esc to close.</p>
+</div>
+
 <script>
 function switchView(targetId, pushHistory = true) {
     const targetSection = document.getElementById(targetId);
     if (!targetSection) return;
-
     const currentActive = document.querySelector('.view-section.active');
-
     if (currentActive && currentActive !== targetSection) {
         currentActive.classList.add('fade-out');
         setTimeout(() => {
@@ -249,7 +254,6 @@ function switchView(targetId, pushHistory = true) {
         window.scrollTo({ top: 0, behavior: 'instant' });
         triggerReveals(targetSection);
     }
-
     if (pushHistory) {
         history.pushState({ target: targetId }, '', '#' + targetId);
     }
@@ -296,6 +300,131 @@ window.addEventListener('DOMContentLoaded', () => {
         triggerReveals(document.getElementById('view-home'));
     }
 });
+
+const cards = document.querySelectorAll('.tilt-card');
+cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(1000px) rotateX(${y * -4}deg) rotateY(${x * 4}deg) translateY(-8px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+    });
+});
+
+const snakeOverlay = document.getElementById('snake-overlay');
+const canvas = document.getElementById('snake-canvas');
+const ctx = canvas.getContext('2d');
+const scoreEl = document.getElementById('current-score');
+const gridSize = 20;
+let snake = [];
+let food = {};
+let direction = 'right';
+let score = 0;
+let gameLoop;
+let isGameRunning = false;
+let inputPattern = "";
+
+document.addEventListener('keydown', e => {
+    if (isGameRunning) {
+        if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) e.preventDefault();
+        if (e.key === 'Esc' || e.key === 'Escape') closeSnake();
+    } else {
+        inputPattern += e.key.toLowerCase();
+        if (inputPattern.length > 8) inputPattern = inputPattern.slice(-8);
+        if (inputPattern === "infinity") startSnake();
+    }
+});
+
+function startSnake() {
+    if (isGameRunning) return;
+    inputPattern = "";
+    isGameRunning = true;
+    snakeOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    resetGame();
+    gameLoop = setInterval(draw, 100);
+}
+
+function closeSnake() {
+    isGameRunning = false;
+    snakeOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    clearInterval(gameLoop);
+}
+
+function resetGame() {
+    snake = [{ x: 10 * gridSize, y: 10 * gridSize }];
+    direction = 'right';
+    score = 0;
+    scoreEl.innerText = score;
+    placeFood();
+}
+
+function placeFood() {
+    food = {
+        x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
+        y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
+    };
+}
+
+document.addEventListener('keydown', e => {
+    if (!isGameRunning) return;
+    if (e.key === 'ArrowUp' && direction !== 'down') direction = 'up';
+    if (e.key === 'ArrowDown' && direction !== 'up') direction = 'down';
+    if (e.key === 'ArrowLeft' && direction !== 'right') direction = 'left';
+    if (e.key === 'ArrowRight' && direction !== 'left') direction = 'right';
+});
+
+function draw() {
+    ctx.fillStyle = '#060606';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    for (let i = 0; i < snake.length; i++) {
+        ctx.fillStyle = (i === 0) ? '#ffffff' : '#888888';
+        ctx.fillRect(snake[i].x, snake[i].y, gridSize - 2, gridSize - 2);
+    }
+    
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(food.x, food.y, gridSize - 2, gridSize - 2);
+    
+    let headX = snake[0].x;
+    let headY = snake[0].y;
+    
+    if (direction === 'up') headY -= gridSize;
+    if (direction === 'down') headY += gridSize;
+    if (direction === 'left') headX -= gridSize;
+    if (direction === 'right') headX += gridSize;
+    
+    if (headX === food.x && headY === food.y) {
+        score++;
+        scoreEl.innerText = score;
+        placeFood();
+    } else {
+        snake.pop();
+    }
+    
+    let newHead = { x: headX, y: headY };
+    
+    if (headX < 0 || headX >= canvas.width || headY < 0 || headY >= canvas.height || collision(newHead, snake)) {
+        clearInterval(gameLoop);
+        setTimeout(() => {
+            alert('Game Over! Score: ' + score);
+            closeSnake();
+        }, 50);
+        return;
+    }
+    snake.unshift(newHead);
+}
+
+function collision(head, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (head.x === array[i].x && head.y === array[i].y) return true;
+    }
+    return false;
+}
 </script>
 </body>
 </html>
