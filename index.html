@@ -69,12 +69,7 @@
 <h2>Latest Update</h2>
 <a href="#" class="btn-sm nav-trigger magnetic" data-target="view-all-news">VIEW ALL &rarr;</a>
 </div>
-<div class="news-item nav-trigger" data-target="view-news-1">
-<h3>Welcome to our website</h3>
-<span class="date">August 5, 2026</span>
-<p>We finally put together a proper home for all our games and updates so everything is right here in one place.</p>
-<span class="btn-text">READ FULL ARTICLE &rarr;</span>
-</div>
+<div id="latest-news-container"></div>
 </section>
 
 <section id="games">
@@ -182,13 +177,7 @@
 
 <div id="view-all-news" class="view-section">
 <a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
-<h2 class="reveal">All News Archive</h2>
-<div class="news-item nav-trigger reveal" data-target="view-news-1">
-<h3>Welcome to our website</h3>
-<span class="date">August 5, 2026</span>
-<p>We finally put together a proper home for all our games and updates so everything is right here in one place.</p>
-<span class="btn-text">READ FULL ARTICLE &rarr;</span>
-</div>
+<div id="all-news-container"></div>
 </div>
 
 <div id="view-all-games" class="view-section">
@@ -246,17 +235,6 @@
 </div>
 </div>
 
-<div id="view-news-1" class="view-section page-detail">
-<a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
-<h1 class="reveal">Welcome to our website</h1>
-<span class="date reveal">August 5, 2026</span>
-<div class="content reveal">
-<p>Finally we got our own website up and running. Everything we make is now right here in one place so you can easily check out all our games and updates without searching around.</p>
-<p>Thanks for sticking with us and supporting what we do. We are constantly working on new projects and we cannot wait to share more soon.</p>
-<p>František Svoboda<br>Infinity Entertainment</p>
-</div>
-</div>
-
 </main>
 
 <footer>
@@ -290,6 +268,70 @@ SCORE: <span id="current-score" style="color: #fff;">0</span> | HIGH SCORE: <spa
 </div>
 
 <script>
+fetch('news.json')
+.then(response => response.json())
+.then(newsList => {
+if(newsList.length > 0) {
+const latest = newsList[0];
+const latestContainer = document.getElementById('latest-news-container');
+if(latestContainer) {
+latestContainer.innerHTML = `
+<div class="news-item nav-trigger" data-target="view-${latest.id}">
+<h3>${latest.title}</h3>
+<span class="date">${latest.date}</span>
+<p>${latest.perex}</p>
+<span class="btn-text">READ FULL ARTICLE &rarr;</span>
+</div>
+`;
+}
+
+const allContainer = document.getElementById('all-news-container');
+if(allContainer) {
+let allHtml = '<h2 class="reveal">All News Archive</h2>';
+newsList.forEach(item => {
+allHtml += `
+<div class="news-item nav-trigger reveal" data-target="view-${item.id}">
+<h3>${item.title}</h3>
+<span class="date">${item.date}</span>
+<p>${item.perex}</p>
+<span class="btn-text">READ FULL ARTICLE &rarr;</span>
+</div>
+`;
+});
+allContainer.innerHTML = allHtml;
+}
+
+const mainTag = document.querySelector('main');
+newsList.forEach(item => {
+let paragraphsHtml = '';
+item.paragraphs.forEach(p => {
+paragraphsHtml += `<p>${p}</p>`;
+});
+
+const detailDiv = document.createElement('div');
+detailDiv.id = `view-${item.id}`;
+detailDiv.className = 'view-section page-detail';
+detailDiv.innerHTML = `
+<a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
+<h1 class="reveal">${item.title}</h1>
+<span class="date reveal">${item.date}</span>
+<div class="content reveal">
+${paragraphsHtml}
+</div>
+`;
+mainTag.appendChild(detailDiv);
+});
+
+document.querySelectorAll('.nav-trigger').forEach(trigger => {
+trigger.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('data-target');
+switchView(targetId, true);
+});
+});
+}
+});
+
 const cursorDot = document.getElementById('cursor-dot');
 const cursorOutline = document.getElementById('cursor-outline');
 let mouseX = window.innerWidth / 2;
