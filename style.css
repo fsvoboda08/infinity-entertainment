@@ -282,11 +282,11 @@ main {
     border-radius: 8px;
     overflow: hidden;
     margin: 0 0 80px 0;
-    min-height: 600px;
     display: flex;
     align-items: flex-end;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    min-height: 400px;
 }
 
 .featured-bg {
@@ -315,7 +315,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(5,5,5,1) 0%, rgba(5,5,5,0.4) 50%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(0deg, rgba(5,5,5,1) 0%, rgba(5,5,5,0.6) 50%, rgba(0,0,0,0) 100%);
     z-index: 1;
 }
 
@@ -339,6 +339,7 @@ main {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .tag {
@@ -524,16 +525,42 @@ h2 {
 }
 
 @media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    nav a {
+        margin-left: 0;
+    }
+
     .game-grid {
         grid-template-columns: 1fr;
     }
     
     .featured-content {
-        padding: 40px 30px;
+        padding: 30px 20px;
     }
     
     .game-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+    
+    #featured-game {
+        min-height: auto;
+    }
+    
+    .team-member {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
