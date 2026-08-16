@@ -1,633 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Infinity Entertainment - Czech Independent Game Development Studio creating immersive co-op and horror games like HAUNTMATES and Scarecrowed.">
-<meta name="keywords" content="indie games, game development, studio, horror games, co-op, HAUNTMATES, Unity, Infinity Entertainment, Czech game dev, multiplayer horror, psychological horror, survival horror, investigation game, online co-op, atmospheric, pc games">
-<meta name="author" content="Infinity Entertainment">
-<meta property="og:title" content="Infinity Entertainment | Indie Game Studio">
-<meta property="og:description" content="Czech Independent Game Development Studio behind HAUNTMATES and Scarecrowed.">
-<meta property="og:type" content="website">
-<title>Infinity Entertainment</title>
-<link rel="icon" type="image/png" href="webLogo.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Infinity Entertainment - Czech Independent Game Development Studio creating immersive co-op and horror games like HAUNTMATES and Scarecrowed.">
+    <meta name="keywords" content="indie games, game development, studio, horror games, co-op, HAUNTMATES, Unity, Infinity Entertainment, Czech game dev, multiplayer horror, psychological horror, survival horror, investigation game, online co-op, atmospheric, pc games">
+    <meta name="author" content="Infinity Entertainment">
+    <meta property="og:title" content="Infinity Entertainment | Indie Game Studio">
+    <meta property="og:description" content="Czech Independent Game Development Studio behind HAUNTMATES and Scarecrowed.">
+    <meta property="og:type" content="website">
+    <title>Infinity Entertainment</title>
+    <link rel="canonical" href="https://infinityentertainmentgames.com" />
+    <link rel="icon" type="image/png" href="webLogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="cursor-dot" id="cursor-dot"></div>
-<div class="cursor-outline" id="cursor-outline"></div>
-<div class="scanlines"></div>
-<div class="film-grain"></div>
-<div class="abstract-bg"></div>
+    <div class="background-layers">
+        <div class="scanlines"></div>
+        <div class="film-grain"></div>
+        <div class="abstract-bg"></div>
+    </div>
+    
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
 
-<header>
-<div class="logo nav-trigger magnetic" data-target="view-home">INFINITY ENTERTAINMENT</div>
-<nav>
-<a href="#" class="nav-trigger magnetic" data-target="view-all-news">News</a>
-<a href="#" class="nav-trigger magnetic" data-target="view-all-games">Games</a>
-<a href="#" class="nav-trigger magnetic" data-target="view-about">About</a>
-</nav>
-</header>
-<main>
+    <header>
+        <div class="logo nav-trigger magnetic" data-target="view-home">INFINITY ENTERTAINMENT</div>
+        <nav>
+            <a href="#" class="nav-trigger magnetic" data-target="view-all-news">News</a>
+            <a href="#" class="nav-trigger magnetic" data-target="view-all-games">Games</a>
+            <a href="#" class="nav-trigger magnetic" data-target="view-about">About</a>
+        </nav>
+    </header>
+    <main>
+        <div id="view-home" class="view-section active">
+            <section id="hero">
+                <div class="hero-content">
+                    <img src="logo.png" alt="Infinity Entertainment Logo" class="hero-logo">
+                    <p class="hero-text">Czech Independent Game Development Studio</p>
+                </div>
+            </section>
 
-<div id="view-home" class="view-section active">
-<section id="hero">
-<div class="hero-content">
-<img src="logo.png" alt="Infinity Entertainment Logo" class="hero-logo">
-<p class="hero-text">Czech Independent Game Development Studio</p>
-</div>
-</section>
+            <section id="featured-game" class="reveal">
+                <div class="featured-bg">
+                    <video autoplay loop muted playsinline class="hero-video">
+                        <source src="trailer.mp4" type="video/mp4">
+                    </video>
+                    <div class="featured-overlay"></div>
+                </div>
+                <div class="featured-content">
+                    <span class="badge badge-highlight">Out Now</span>
+                    <h2 class="game-title">HAUNTMATES</h2>
+                    <div class="game-tags">
+                        <span class="tag">Co-op</span>
+                        <span class="tag">Horror</span>
+                        <span class="tag">Investigation</span>
+                    </div>
+                    <p>Cooperative multiplayer investigation horror where you must work together to survive.</p>
+                    <div class="btn-group">
+                        <a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-primary magnetic pulse-btn">PLAY ON STEAM</a>
+                    </div>
+                </div>
+            </section>
 
-<section id="featured-game" class="reveal">
-<div class="featured-bg">
-<video autoplay loop muted playsinline class="hero-video">
-<source src="trailer.mp4" type="video/mp4">
-</video>
-<div class="featured-overlay"></div>
-</div>
-<div class="featured-content">
-<span class="badge badge-highlight">Out Now</span>
-<h2 class="game-title">HAUNTMATES</h2>
-<div class="game-tags">
-<span class="tag">Co-op</span>
-<span class="tag">Horror</span>
-<span class="tag">Investigation</span>
-</div>
-<p>Cooperative multiplayer investigation horror where you must work together to survive.</p>
-<div class="btn-group">
-<a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-primary magnetic pulse-btn">PLAY ON STEAM</a>
-</div>
-</div>
-</section>
+            <section id="news" class="reveal">
+                <div class="section-header">
+                    <h2>Latest Update</h2>
+                    <a href="#" class="btn-sm nav-trigger magnetic" data-target="view-all-news">VIEW ALL &rarr;</a>
+                </div>
+                <div id="latest-news-container"></div>
+            </section>
 
-<section id="news" class="reveal">
-<div class="section-header">
-<h2>Latest Update</h2>
-<a href="#" class="btn-sm nav-trigger magnetic" data-target="view-all-news">VIEW ALL &rarr;</a>
-</div>
-<div id="latest-news-container"></div>
-</section>
+            <section id="games">
+                <div class="section-header reveal">
+                    <h2>Our Games</h2>
+                    <a href="#" class="btn-sm nav-trigger magnetic" data-target="view-all-games">VIEW ALL &rarr;</a>
+                </div>
+                <div class="game-grid">
+                    <div class="game-card tilt-card reveal">
+                        <div class="mystery-cover">?</div>
+                        <div class="game-info">
+                            <span class="badge badge-upcoming">Coming Soon</span>
+                            <h3>Project Moonshine</h3>
+                            <span class="btn btn-disabled">COMING SOON TO STEAM</span>
+                        </div>
+                    </div>
+                    <div class="game-card tilt-card reveal">
+                        <div class="game-cover-frame">
+                            <img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
+                        </div>
+                        <div class="game-info">
+                            <span class="badge badge-released">RELEASED</span>
+                            <h3>SCARECROWED</h3>
+                            <a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform magnetic">VIEW ON ITCH.IO</a>
+                        </div>
+                    </div>
+                    <div class="game-card tilt-card reveal">
+                        <div class="game-cover-frame">
+                            <img src="hauntmates.jpg" alt="HAUNTMATES" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
+                        </div>
+                        <div class="game-info">
+                            <span class="badge badge-released">RELEASED</span>
+                            <h3>HAUNTMATES</h3>
+                            <a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-platform magnetic">VIEW ON STEAM</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-<section id="games">
-<div class="section-header reveal">
-<h2>Our Games</h2>
-<a href="#" class="btn-sm nav-trigger magnetic" data-target="view-all-games">VIEW ALL &rarr;</a>
-</div>
-<div class="game-grid">
-<div class="game-card tilt-card reveal">
-<div class="mystery-cover">?</div>
-<div class="game-info">
-<span class="badge badge-upcoming">Coming Soon</span>
-<h3>Project Moonshine</h3>
-<span class="btn btn-disabled">COMING SOON TO STEAM</span>
-</div>
-</div>
-<div class="game-card tilt-card reveal">
-<div class="game-cover-frame">
-<img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
-</div>
-<div class="game-info">
-<span class="badge badge-released">RELEASED</span>
-<h3>SCARECROWED</h3>
-<a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform magnetic">VIEW ON ITCH.IO</a>
-</div>
-</div>
-<div class="game-card tilt-card reveal">
-<div class="game-cover-frame">
-<img src="hauntmates.jpg" alt="HAUNTMATES" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
-</div>
-<div class="game-info">
-<span class="badge badge-released">RELEASED</span>
-<h3>HAUNTMATES</h3>
-<a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-platform magnetic">VIEW ON STEAM</a>
-</div>
-</div>
-</div>
-</section>
-</div>
+        <div id="view-about" class="view-section page-detail">
+            <a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
+            <h1 class="reveal">About Infinity Entertainment</h1>
+            <div class="content reveal">
+                <p>We are two friends from the Czech Republic and we just love making games. We put everything into our projects, and our dream is to make this our full-time job so we can spend all our time building great experiences for you.</p>
+                <div class="team-grid">
+                    <div class="team-member reveal">
+                        <div class="member-avatar">F</div>
+                        <div class="member-info">
+                            <h3>František Svoboda</h3>
+                            <span class="role">Programming & Game Design</span>
+                            <p>Hi, I'm František, Founder & CEO of Infinity Entertainment. I've loved games my whole life, and that passion eventually led me to start making them myself. Building them takes a ton of work, but the absolute best part is just watching people play and genuinely enjoy what we've created.</p>
+                        </div>
+                    </div>
+                    <div class="team-member reveal">
+                        <div class="member-avatar">T</div>
+                        <div class="member-info">
+                            <h3>Tobiáš Štefl</h3>
+                            <span class="role">3D Art & Game Design</span>
+                            <p>Hi, I'm Tobiáš, Over time many games inspired me to try something using Blender. Then we started few projects, We realized that failures teach us the most, but we never gave up and we are still going for the game we dreamed of.</p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="reveal">Tech Stack</h2>
+                <div class="tech-grid reveal">
+                    <div class="tech-card">
+                        <div class="tech-icon tech-icon-unity"><i class="fa-brands fa-unity"></i></div>
+                        <div class="tech-info"><h4>Unity</h4><span>Game Engine & Logic</span></div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon tech-icon-blender"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg" alt="Blender Logo" class="blender-svg"></div>
+                        <div class="tech-info"><h4>Blender</h4><span>3D Modeling & Environment</span></div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon tech-icon-ps">Ps</div>
+                        <div class="tech-info"><h4>Photoshop</h4><span>2D Graphics & Textures</span></div>
+                    </div>
+                </div>
+                <h2 class="reveal">Contact & Community</h2>
+                <p class="reveal">If you want to get in touch with us, shoot us an email at <strong>infinityentertainment80@gmail.com</strong>.</p>
+                <div class="social-links reveal">
+                    <a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-steam"></i></a>
+                    <a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
 
-<div id="view-about" class="view-section page-detail">
-<a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
-<h1 class="reveal">About Infinity Entertainment</h1>
-<div class="content reveal">
-<p>We are two friends from the Czech Republic and we just love making games. We put everything into our projects, and our dream is to make this our full-time job so we can spend all our time building great experiences for you.</p>
+        <div id="view-all-news" class="view-section">
+            <a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
+            <div id="all-news-container"></div>
+        </div>
 
-<div class="team-grid">
-<div class="team-member reveal">
-<div class="member-avatar">F</div>
-<div class="member-info">
-<h3>František Svoboda</h3>
-<span class="role">Programming & Game Design</span>
-<p>Hi, I'm František, Founder & CEO of Infinity Entertainment. I've loved games my whole life, and that passion eventually led me to start making them myself. Building them takes a ton of work, but the absolute best part is just watching people play and genuinely enjoy what we've created.</p>
-</div>
-</div>
+        <div id="view-all-games" class="view-section">
+            <a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
+            <h2 class="reveal">All Games Archive</h2>
+            <div class="game-grid">
+                <div class="game-card tilt-card reveal">
+                    <div class="mystery-cover">?</div>
+                    <div class="game-info">
+                        <span class="badge badge-upcoming">COMING SOON</span>
+                        <h3>Project Moonshine</h3>
+                        <span class="btn btn-disabled">COMING SOON TO STEAM</span>
+                    </div>
+                </div>
+                <div class="game-card tilt-card reveal">
+                    <div class="game-cover-frame">
+                        <img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
+                    </div>
+                    <div class="game-info">
+                        <span class="badge badge-released">RELEASED</span>
+                        <h3>SCARECROWED</h3>
+                        <a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform magnetic">VIEW ON ITCH.IO</a>
+                    </div>
+                </div>
+                <div class="game-card tilt-card reveal">
+                    <div class="game-cover-frame">
+                        <img src="hauntmates.jpg" alt="HAUNTMATES" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
+                    </div>
+                    <div class="game-info">
+                        <span class="badge badge-released">RELEASED</span>
+                        <h3>HAUNTMATES</h3>
+                        <a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-platform magnetic">VIEW ON STEAM</a>
+                    </div>
+                </div>
+                <div class="game-card tilt-card reveal">
+                    <div class="game-cover-frame">
+                        <img src="lastcure.jpg" alt="The Last Cure" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
+                    </div>
+                    <div class="game-info">
+                        <span class="badge badge-released">RELEASED</span>
+                        <h3>The Last Cure</h3>
+                        <a href="https://infinity-entertainment.itch.io/the-last-cure" target="_blank" class="btn btn-platform magnetic">VIEW ON ITCH.IO</a>
+                    </div>
+                </div>
+                <div class="game-card tilt-card reveal">
+                    <div class="game-cover-frame">
+                        <img src="apartment57.jpg" alt="The Apartment 57" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: 0%;">
+                    </div>
+                    <div class="game-info">
+                        <span class="badge badge-released">RELEASED</span>
+                        <h3>The Apartment 57</h3>
+                        <a href="https://infinity-entertainment.itch.io/the-apartment-57" target="_blank" class="btn btn-platform magnetic">VIEW ON ITCH.IO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-<div class="team-member reveal">
-<div class="member-avatar">T</div>
-<div class="member-info">
-<h3>Tobiáš Štefl</h3>
-<span class="role">3D Art & Game Design</span>
-<p>Hi, I'm Tobiáš, Over time many games inspired me to try something using Blender. Then we started few projects, We realized that failures teach us the most, but we never gave up and we are still going for the game we dreamed of.</p>
-</div>
-</div>
-</div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">INFINITY ENTERTAINMENT</div>
+            <div class="social-links">
+                <a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-steam"></i></a>
+                <a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Infinity Entertainment</p>
+        </div>
+    </footer>
 
-<h2 class="reveal">Tech Stack</h2>
-<div class="tech-grid reveal">
-<div class="tech-card">
-<div class="tech-icon tech-icon-unity"><i class="fa-brands fa-unity"></i></div>
-<div class="tech-info">
-<h4>Unity</h4>
-<span>Game Engine & Logic</span>
-</div>
-</div>
-<div class="tech-card">
-<div class="tech-icon tech-icon-blender">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg" alt="Blender Logo" class="blender-svg">
-</div>
-<div class="tech-info">
-<h4>Blender</h4>
-<span>3D Modeling & Environment</span>
-</div>
-</div>
-<div class="tech-card">
-<div class="tech-icon tech-icon-ps">Ps</div>
-<div class="tech-info">
-<h4>Photoshop</h4>
-<span>2D Graphics & Textures</span>
-</div>
-</div>
-</div>
+    <svg id="snake-trigger-icon" onclick="startSnake()" viewBox="0 0 512 512" width="16" height="18" class="magnetic">
+    <path fill="currentColor" d="M192 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32v32h32c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H224c-17.7 0-32 14.3-32 32s14.3 32 32 32h128c53 0 96 43 96 96s-43 96-96 96H224c-53 0-96-43-96-96V288c0-53 43-96 96-96h96v-32H224c-35.3 0-64-28.7-64-64V64zm192 352a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM64 128c0-17.7 14.3-32 32-32h32v64H96c-17.7 0-32-14.3-32-32z"/>
+    </svg>
 
-<h2 class="reveal">Contact & Community</h2>
-<p class="reveal">If you want to get in touch with us, shoot us an email at <strong>infinityentertainment80@gmail.com</strong>.</p>
-<div class="social-links reveal">
-<a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-steam"></i></a>
-<a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-youtube"></i></a>
-<a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-tiktok"></i></a>
-</div>
+    <div id="snake-overlay">
+        <span id="snake-close" onclick="closeSnake()">&times;</span>
+        <div id="snake-score-board">
+            SCORE: <span id="current-score" style="color: #fff;">0</span> | HIGH SCORE: <span id="high-score" style="color: #0f0;">0</span>
+        </div>
+        <div class="crt-container">
+            <canvas id="snake-canvas" width="300" height="300"></canvas>
+        </div>
+        <p style="margin-top:20px; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Press ESC to exit.</p>
+    </div>
 
-</div>
-</div>
+    <script>
+    fetch('news.json')
+    .then(response => response.json())
+    .then(newsList => {
+        if(newsList.length > 0) {
+            const latest = newsList[0];
+            const latestContainer = document.getElementById('latest-news-container');
+            if(latestContainer) {
+                latestContainer.innerHTML = `
+                <div class="news-item nav-trigger" data-target="view-${latest.id}">
+                <h3>${latest.title}</h3>
+                <span class="date">${latest.date}</span>
+                <p>${latest.perex}</p>
+                <span class="btn-text">READ FULL ARTICLE &rarr;</span>
+                </div>
+                `;
+            }
 
-<div id="view-all-news" class="view-section">
-<a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
-<div id="all-news-container"></div>
-</div>
+            const allContainer = document.getElementById('all-news-container');
+            if(allContainer) {
+                let allHtml = '<h2 class="reveal">All News Archive</h2>';
+                newsList.forEach(item => {
+                    allHtml += `
+                    <div class="news-item nav-trigger reveal" data-target="view-${item.id}">
+                    <h3>${item.title}</h3>
+                    <span class="date">${item.date}</span>
+                    <p>${item.perex}</p>
+                    <span class="btn-text">READ FULL ARTICLE &rarr;</span>
+                    </div>
+                    `;
+                });
+                allContainer.innerHTML = allHtml;
+            }
 
-<div id="view-all-games" class="view-section">
-<a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
-<h2 class="reveal">All Games Archive</h2>
-<div class="game-grid">
-<div class="game-card tilt-card reveal">
-<div class="mystery-cover">?</div>
-<div class="game-info">
-<span class="badge badge-upcoming">COMING SOON</span>
-<h3>Project Moonshine</h3>
-<span class="btn btn-disabled">COMING SOON TO STEAM</span>
-</div>
-</div>
-<div class="game-card tilt-card reveal">
-<div class="game-cover-frame">
-<img src="scarecrowed.jpg" alt="Scarecrowed" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
-</div>
-<div class="game-info">
-<span class="badge badge-released">RELEASED</span>
-<h3>SCARECROWED</h3>
-<a href="https://infinity-entertainment.itch.io/the-scarecrowed" target="_blank" class="btn btn-platform magnetic">VIEW ON ITCH.IO</a>
-</div>
-</div>
-<div class="game-card tilt-card reveal">
-<div class="game-cover-frame">
-<img src="hauntmates.jpg" alt="HAUNTMATES" class="game-cover" style="--cover-zoom: 1.35; --cover-x: 0%; --cover-y: 15%;">
-</div>
-<div class="game-info">
-<span class="badge badge-released">RELEASED</span>
-<h3>HAUNTMATES</h3>
-<a href="https://store.steampowered.com/app/4400300/HAUNTMATES/" target="_blank" class="btn btn-platform magnetic">VIEW ON STEAM</a>
-</div>
-</div>
-<div class="game-card tilt-card reveal">
-<div class="game-cover-frame">
-<img src="lastcure.jpg" alt="The Last Cure" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: -5%;">
-</div>
-<div class="game-info">
-<span class="badge badge-released">RELEASED</span>
-<h3>The Last Cure</h3>
-<a href="https://infinity-entertainment.itch.io/the-last-cure" target="_blank" class="btn btn-platform magnetic">VIEW ON ITCH.IO</a>
-</div>
-</div>
-<div class="game-card tilt-card reveal">
-<div class="game-cover-frame">
-<img src="apartment57.jpg" alt="The Apartment 57" class="game-cover" style="--cover-zoom: 1; --cover-x: 0%; --cover-y: 0%;">
-</div>
-<div class="game-info">
-<span class="badge badge-released">RELEASED</span>
-<h3>The Apartment 57</h3>
-<a href="https://infinity-entertainment.itch.io/the-apartment-57" target="_blank" class="btn btn-platform magnetic">VIEW ON ITCH.IO</a>
-</div>
-</div>
-</div>
-</div>
+            const mainTag = document.querySelector('main');
+            newsList.forEach(item => {
+                let paragraphsHtml = '';
+                item.paragraphs.forEach(p => {
+                    paragraphsHtml += `<p>${p}</p>`;
+                });
 
-</main>
+                const detailDiv = document.createElement('div');
+                detailDiv.id = `view-${item.id}`;
+                detailDiv.className = 'view-section page-detail';
+                detailDiv.innerHTML = `
+                <a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
+                <h1 class="reveal">${item.title}</h1>
+                <span class="date reveal">${item.date}</span>
+                <div class="content reveal">
+                ${paragraphsHtml}
+                </div>
+                `;
+                mainTag.appendChild(detailDiv);
+            });
 
-<footer>
-<div class="footer-content">
-<div class="footer-logo">INFINITY ENTERTAINMENT</div>
-<div class="social-links">
-<a href="https://store.steampowered.com/developer/infinityentertainment" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-steam"></i></a>
-<a href="https://www.youtube.com/@Infinity.Entertainment" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-youtube"></i></a>
-<a href="https://www.instagram.com/infinityentertainment8/" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://www.tiktok.com/@infinity.entertai40" target="_blank" class="social-icon magnetic"><i class="fa-brands fa-tiktok"></i></a>
-</div>
-</div>
-<div class="footer-bottom">
-<p>&copy; 2026 Infinity Entertainment</p>
-</div>
-</footer>
+            document.querySelectorAll('.nav-trigger').forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    switchView(targetId, true);
+                });
+            });
+        }
+    });
 
-<svg id="snake-trigger-icon" onclick="startSnake()" viewBox="0 0 512 512" width="16" height="18" class="magnetic">
-<path fill="currentColor" d="M192 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32v32h32c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H224c-17.7 0-32 14.3-32 32s14.3 32 32 32h128c53 0 96 43 96 96s-43 96-96 96H224c-53 0-96-43-96-96V288c0-53 43-96 96-96h96v-32H224c-35.3 0-64-28.7-64-64V64zm192 352a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM64 128c0-17.7 14.3-32 32-32h32v64H96c-17.7 0-32-14.3-32-32z"/>
-</svg>
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorOutline = document.getElementById('cursor-outline');
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let outlineX = mouseX;
+    let outlineY = mouseY;
 
-<div id="snake-overlay">
-<span id="snake-close" onclick="closeSnake()">&times;</span>
-<div id="snake-score-board">
-SCORE: <span id="current-score" style="color: #fff;">0</span> | HIGH SCORE: <span id="high-score" style="color: #0f0;">0</span>
-</div>
-<div class="crt-container">
-<canvas id="snake-canvas" width="300" height="300"></canvas>
-</div>
-<p style="margin-top:20px; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Press ESC to exit.</p>
-</div>
+    window.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if(cursorDot) {
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+        }
+    });
 
-<script>
-fetch('news.json')
-.then(response => response.json())
-.then(newsList => {
-if(newsList.length > 0) {
-const latest = newsList[0];
-const latestContainer = document.getElementById('latest-news-container');
-if(latestContainer) {
-latestContainer.innerHTML = `
-<div class="news-item nav-trigger" data-target="view-${latest.id}">
-<h3>${latest.title}</h3>
-<span class="date">${latest.date}</span>
-<p>${latest.perex}</p>
-<span class="btn-text">READ FULL ARTICLE &rarr;</span>
-</div>
-`;
-}
+    function animateCursor() {
+        let dx = mouseX - outlineX;
+        let dy = mouseY - outlineY;
+        outlineX += dx * 0.15;
+        outlineY += dy * 0.15;
+        if(cursorOutline) {
+            cursorOutline.style.left = outlineX + 'px';
+            cursorOutline.style.top = outlineY + 'px';
+        }
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
 
-const allContainer = document.getElementById('all-news-container');
-if(allContainer) {
-let allHtml = '<h2 class="reveal">All News Archive</h2>';
-newsList.forEach(item => {
-allHtml += `
-<div class="news-item nav-trigger reveal" data-target="view-${item.id}">
-<h3>${item.title}</h3>
-<span class="date">${item.date}</span>
-<p>${item.perex}</p>
-<span class="btn-text">READ FULL ARTICLE &rarr;</span>
-</div>
-`;
-});
-allContainer.innerHTML = allHtml;
-}
+    document.querySelectorAll('a, button, input, .nav-trigger, .game-card, .social-icon, .magnetic').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            if(cursorOutline) cursorOutline.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            if(cursorOutline) cursorOutline.classList.remove('cursor-hover');
+        });
+    });
 
-const mainTag = document.querySelector('main');
-newsList.forEach(item => {
-let paragraphsHtml = '';
-item.paragraphs.forEach(p => {
-paragraphsHtml += `<p>${p}</p>`;
-});
+    document.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const h = rect.width / 2;
+            const w = rect.height / 2;
+            const x = e.clientX - rect.left - h;
+            const y = e.clientY - rect.top - w;
+            this.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = `translate(0px, 0px)`;
+        });
+    });
 
-const detailDiv = document.createElement('div');
-detailDiv.id = `view-${item.id}`;
-detailDiv.className = 'view-section page-detail';
-detailDiv.innerHTML = `
-<a href="#" class="btn-text nav-trigger back-link reveal magnetic" data-target="view-home">&larr; BACK TO HOME</a>
-<h1 class="reveal">${item.title}</h1>
-<span class="date reveal">${item.date}</span>
-<div class="content reveal">
-${paragraphsHtml}
-</div>
-`;
-mainTag.appendChild(detailDiv);
-});
+    function updateSnakeIconVisibility(targetId) {
+        const snakeIcon = document.getElementById('snake-trigger-icon');
+        if (snakeIcon) {
+            snakeIcon.style.display = (targetId === 'view-all-games') ? 'block' : 'none';
+        }
+    }
 
-document.querySelectorAll('.nav-trigger').forEach(trigger => {
-trigger.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('data-target');
-switchView(targetId, true);
-});
-});
-}
-});
+    function switchView(targetId, pushHistory = true) {
+        const targetSection = document.getElementById(targetId);
+        if (!targetSection) return;
+        const currentActive = document.querySelector('.view-section.active');
+        updateSnakeIconVisibility(targetId);
 
-const cursorDot = document.getElementById('cursor-dot');
-const cursorOutline = document.getElementById('cursor-outline');
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-let outlineX = mouseX;
-let outlineY = mouseY;
+        if (currentActive && currentActive !== targetSection) {
+            currentActive.classList.add('fade-out');
+            setTimeout(() => {
+                currentActive.classList.remove('active', 'fade-out');
+                targetSection.classList.add('fade-in', 'active');
+                window.scrollTo({ top: 0, behavior: 'instant' });
+                triggerReveals(targetSection);
+                setTimeout(() => {
+                    targetSection.classList.remove('fade-in');
+                }, 300);
+            }, 150);
+        } else {
+            targetSection.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            triggerReveals(targetSection);
+        }
+        if (pushHistory) {
+            history.pushState({ target: targetId }, '', '#' + targetId);
+        }
+    }
 
-window.addEventListener('mousemove', function(e) {
-mouseX = e.clientX;
-mouseY = e.clientY;
-if(cursorDot) {
-cursorDot.style.left = mouseX + 'px';
-cursorDot.style.top = mouseY + 'px';
-}
-});
+    document.querySelectorAll('.nav-trigger').forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            switchView(targetId, true);
+        });
+    });
 
-function animateCursor() {
-let dx = mouseX - outlineX;
-let dy = mouseY - outlineY;
-outlineX += dx * 0.15;
-outlineY += dy * 0.15;
-if(cursorOutline) {
-cursorOutline.style.left = outlineX + 'px';
-cursorOutline.style.top = outlineY + 'px';
-}
-requestAnimationFrame(animateCursor);
-}
-animateCursor();
+    window.addEventListener('popstate', function(event) {
+        const targetId = event.state && event.state.target ? event.state.target : 'view-home';
+        switchView(targetId, false);
+    });
 
-document.querySelectorAll('a, button, input, .nav-trigger, .game-card, .social-icon, .magnetic').forEach(el => {
-el.addEventListener('mouseenter', () => {
-if(cursorOutline) cursorOutline.classList.add('cursor-hover');
-});
-el.addEventListener('mouseleave', () => {
-if(cursorOutline) cursorOutline.classList.remove('cursor-hover');
-});
-});
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            } else {
+                entry.target.classList.remove('is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
 
-document.querySelectorAll('.magnetic').forEach(btn => {
-btn.addEventListener('mousemove', function(e) {
-const rect = this.getBoundingClientRect();
-const h = rect.width / 2;
-const w = rect.height / 2;
-const x = e.clientX - rect.left - h;
-const y = e.clientY - rect.top - w;
-this.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
-});
-btn.addEventListener('mouseleave', function() {
-this.style.transform = `translate(0px, 0px)`;
-});
-});
+    function triggerReveals(container) {
+        container.querySelectorAll('.reveal').forEach(el => {
+            el.classList.remove('is-visible');
+            observer.unobserve(el);
+            setTimeout(() => observer.observe(el), 50);
+        });
+    }
 
-function updateSnakeIconVisibility(targetId) {
-const snakeIcon = document.getElementById('snake-trigger-icon');
-if (snakeIcon) {
-snakeIcon.style.display = (targetId === 'view-all-games') ? 'block' : 'none';
-}
-}
+    window.addEventListener('DOMContentLoaded', () => {
+        let initialTarget = 'view-home';
+        if (window.location.hash) {
+            const targetId = window.location.hash.substring(1);
+            if (document.getElementById(targetId)) {
+                initialTarget = targetId;
+                switchView(targetId, false);
+            }
+        } else {
+            triggerReveals(document.getElementById('view-home'));
+        }
+        updateSnakeIconVisibility(initialTarget);
+    });
 
-function switchView(targetId, pushHistory = true) {
-const targetSection = document.getElementById(targetId);
-if (!targetSection) return;
-const currentActive = document.querySelector('.view-section.active');
-updateSnakeIconVisibility(targetId);
+    const cards = document.querySelectorAll('.tilt-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = `perspective(1000px) rotateX(${y * -4}deg) rotateY(${x * 4}deg) translateY(-8px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
 
-if (currentActive && currentActive !== targetSection) {
-currentActive.classList.add('fade-out');
-setTimeout(() => {
-currentActive.classList.remove('active', 'fade-out');
-targetSection.classList.add('fade-in', 'active');
-window.scrollTo({ top: 0, behavior: 'instant' });
-triggerReveals(targetSection);
-setTimeout(() => {
-targetSection.classList.remove('fade-in');
-}, 300);
-}, 150);
-} else {
-targetSection.classList.add('active');
-window.scrollTo({ top: 0, behavior: 'instant' });
-triggerReveals(targetSection);
-}
-if (pushHistory) {
-history.pushState({ target: targetId }, '', '#' + targetId);
-}
-}
+    const snakeOverlay = document.getElementById('snake-overlay');
+    const canvas = document.getElementById('snake-canvas');
+    const ctx = canvas.getContext('2d');
+    const scoreEl = document.getElementById('current-score');
+    const highScoreEl = document.getElementById('high-score');
 
-document.querySelectorAll('.nav-trigger').forEach(trigger => {
-trigger.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('data-target');
-switchView(targetId, true);
-});
-});
+    const gridSize = 20; 
+    const totalCells = 225;
 
-window.addEventListener('popstate', function(event) {
-const targetId = event.state && event.state.target ? event.state.target : 'view-home';
-switchView(targetId, false);
-});
+    let snake = [];
+    let food = {};
+    let direction = 'right';
+    let nextDirection = 'right';
+    let score = 0;
+    let highScore = localStorage.getItem('infinity_snake_highscore') || 0;
+    let gameLoop;
+    let isGameRunning = false;
 
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('is-visible');
-} else {
-entry.target.classList.remove('is-visible');
-}
-});
-}, { threshold: 0.1 });
+    highScoreEl.innerText = highScore;
 
-function triggerReveals(container) {
-container.querySelectorAll('.reveal').forEach(el => {
-el.classList.remove('is-visible');
-observer.unobserve(el);
-setTimeout(() => observer.observe(el), 50);
-});
-}
+    document.addEventListener('keydown', e => {
+        if (isGameRunning) {
+            if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) e.preventDefault();
+            if (e.key === 'Esc' || e.key === 'Escape') closeSnake();
+        }
+    });
 
-window.addEventListener('DOMContentLoaded', () => {
-let initialTarget = 'view-home';
-if (window.location.hash) {
-const targetId = window.location.hash.substring(1);
-if (document.getElementById(targetId)) {
-initialTarget = targetId;
-switchView(targetId, false);
-}
-} else {
-triggerReveals(document.getElementById('view-home'));
-}
-updateSnakeIconVisibility(initialTarget);
-});
+    function startSnake() {
+        if (isGameRunning) return;
+        isGameRunning = true;
+        snakeOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        resetGame();
+        gameLoop = setInterval(draw, 120); 
+    }
 
-const cards = document.querySelectorAll('.tilt-card');
-cards.forEach(card => {
-card.addEventListener('mousemove', e => {
-const rect = card.getBoundingClientRect();
-const x = (e.clientX - rect.left) / rect.width - 0.5;
-const y = (e.clientY - rect.top) / rect.height - 0.5;
-card.style.transform = `perspective(1000px) rotateX(${y * -4}deg) rotateY(${x * 4}deg) translateY(-8px)`;
-});
-card.addEventListener('mouseleave', () => {
-card.style.transform = '';
-});
-});
+    function closeSnake() {
+        isGameRunning = false;
+        snakeOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        clearInterval(gameLoop);
+    }
 
-const snakeOverlay = document.getElementById('snake-overlay');
-const canvas = document.getElementById('snake-canvas');
-const ctx = canvas.getContext('2d');
-const scoreEl = document.getElementById('current-score');
-const highScoreEl = document.getElementById('high-score');
+    function resetGame() {
+        snake = [
+            { x: 7 * gridSize, y: 7 * gridSize },
+            { x: 6 * gridSize, y: 7 * gridSize },
+            { x: 5 * gridSize, y: 7 * gridSize }
+        ];
+        direction = 'right';
+        nextDirection = 'right';
+        score = 0;
+        scoreEl.innerText = score;
+        placeFood();
+    }
 
-const gridSize = 20; 
-const totalCells = 225;
+    function placeFood() {
+        let onSnake = true;
+        let foodX, foodY;
+        while (onSnake) {
+            foodX = Math.floor(Math.random() * 15) * gridSize;
+            foodY = Math.floor(Math.random() * 15) * gridSize;
+            onSnake = false;
+            for (let part of snake) {
+                if (part.x === foodX && part.y === foodY) {
+                    onSnake = true;
+                    break;
+                }
+            }
+        }
+        food = { x: foodX, y: foodY };
+    }
 
-let snake = [];
-let food = {};
-let direction = 'right';
-let nextDirection = 'right';
-let score = 0;
-let highScore = localStorage.getItem('infinity_snake_highscore') || 0;
-let gameLoop;
-let isGameRunning = false;
+    document.addEventListener('keydown', e => {
+        if (!isGameRunning) return;
+        if (e.key === 'ArrowUp' && direction !== 'down') nextDirection = 'up';
+        if (e.key === 'ArrowDown' && direction !== 'up') nextDirection = 'down';
+        if (e.key === 'ArrowLeft' && direction !== 'right') nextDirection = 'left';
+        if (e.key === 'ArrowRight' && direction !== 'left') nextDirection = 'right';
+    });
 
-highScoreEl.innerText = highScore;
+    function draw() {
+        direction = nextDirection;
+        ctx.fillStyle = '#050505';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = '#121212';
+        ctx.lineWidth = 1;
+        for (let i = 0; i < canvas.width; i += gridSize) {
+            ctx.beginPath();
+            ctx.moveTo(i, 0);
+            ctx.lineTo(i, canvas.height);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(0, i);
+            ctx.lineTo(canvas.width, i);
+            ctx.stroke();
+        }
+        ctx.fillStyle = '#f00';
+        ctx.fillRect(food.x, food.y, gridSize, gridSize);
+        for (let i = 0; i < snake.length; i++) {
+            ctx.fillStyle = (i === 0) ? '#fff' : '#0a0';
+            ctx.fillRect(snake[i].x, snake[i].y, gridSize, gridSize);
+            ctx.strokeStyle = '#050505';
+            ctx.strokeRect(snake[i].x, snake[i].y, gridSize, gridSize);
+        }
+        let headX = snake[0].x;
+        let headY = snake[0].y;
+        if (direction === 'up') headY -= gridSize;
+        if (direction === 'down') headY += gridSize;
+        if (direction === 'left') headX -= gridSize;
+        if (direction === 'right') headX += gridSize;
+        if (headX === food.x && headY === food.y) {
+            score++;
+            scoreEl.innerText = score;
+            if (score > highScore) {
+                highScore = score;
+                localStorage.setItem('infinity_snake_highscore', highScore);
+                highScoreEl.innerText = highScore;
+            }
+            if (snake.length === totalCells) {
+                clearInterval(gameLoop);
+                isGameRunning = false;
+                ctx.fillStyle = 'rgba(0, 255, 0, 0.7)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 30px monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText('YOU WIN!', canvas.width / 2, canvas.height / 2);
+                return;
+            }
+            placeFood();
+        } else {
+            snake.pop();
+        }
+        let newHead = { x: headX, y: headY };
+        if (headX < 0 || headX >= canvas.width || headY < 0 || headY >= canvas.height || collision(newHead, snake)) {
+            clearInterval(gameLoop);
+            ctx.fillStyle = 'rgba(255, 0, 0, 0.6)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            setTimeout(resetGame, 500);
+            setTimeout(() => { gameLoop = setInterval(draw, 120); }, 500);
+            return;
+        }
+        snake.unshift(newHead);
+    }
 
-document.addEventListener('keydown', e => {
-if (isGameRunning) {
-if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) e.preventDefault();
-if (e.key === 'Esc' || e.key === 'Escape') closeSnake();
-}
-});
-
-function startSnake() {
-if (isGameRunning) return;
-isGameRunning = true;
-snakeOverlay.classList.add('active');
-document.body.style.overflow = 'hidden';
-resetGame();
-gameLoop = setInterval(draw, 120); 
-}
-
-function closeSnake() {
-isGameRunning = false;
-snakeOverlay.classList.remove('active');
-document.body.style.overflow = '';
-clearInterval(gameLoop);
-}
-
-function resetGame() {
-snake = [
-{ x: 7 * gridSize, y: 7 * gridSize },
-{ x: 6 * gridSize, y: 7 * gridSize },
-{ x: 5 * gridSize, y: 7 * gridSize }
-];
-direction = 'right';
-nextDirection = 'right';
-score = 0;
-scoreEl.innerText = score;
-placeFood();
-}
-
-function placeFood() {
-let onSnake = true;
-let foodX, foodY;
-while (onSnake) {
-foodX = Math.floor(Math.random() * 15) * gridSize;
-foodY = Math.floor(Math.random() * 15) * gridSize;
-onSnake = false;
-for (let part of snake) {
-if (part.x === foodX && part.y === foodY) {
-onSnake = true;
-break;
-}
-}
-}
-food = { x: foodX, y: foodY };
-}
-
-document.addEventListener('keydown', e => {
-if (!isGameRunning) return;
-if (e.key === 'ArrowUp' && direction !== 'down') nextDirection = 'up';
-if (e.key === 'ArrowDown' && direction !== 'up') nextDirection = 'down';
-if (e.key === 'ArrowLeft' && direction !== 'right') nextDirection = 'left';
-if (e.key === 'ArrowRight' && direction !== 'left') nextDirection = 'right';
-});
-
-function draw() {
-direction = nextDirection;
-ctx.fillStyle = '#050505';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-ctx.strokeStyle = '#121212';
-ctx.lineWidth = 1;
-for (let i = 0; i < canvas.width; i += gridSize) {
-ctx.beginPath();
-ctx.moveTo(i, 0);
-ctx.lineTo(i, canvas.height);
-ctx.stroke();
-ctx.beginPath();
-ctx.moveTo(0, i);
-ctx.lineTo(canvas.width, i);
-ctx.stroke();
-}
-ctx.fillStyle = '#f00';
-ctx.fillRect(food.x, food.y, gridSize, gridSize);
-for (let i = 0; i < snake.length; i++) {
-ctx.fillStyle = (i === 0) ? '#fff' : '#0a0';
-ctx.fillRect(snake[i].x, snake[i].y, gridSize, gridSize);
-ctx.strokeStyle = '#050505';
-ctx.strokeRect(snake[i].x, snake[i].y, gridSize, gridSize);
-}
-let headX = snake[0].x;
-let headY = snake[0].y;
-if (direction === 'up') headY -= gridSize;
-if (direction === 'down') headY += gridSize;
-if (direction === 'left') headX -= gridSize;
-if (direction === 'right') headX += gridSize;
-if (headX === food.x && headY === food.y) {
-score++;
-scoreEl.innerText = score;
-if (score > highScore) {
-highScore = score;
-localStorage.setItem('infinity_snake_highscore', highScore);
-highScoreEl.innerText = highScore;
-}
-if (snake.length === totalCells) {
-clearInterval(gameLoop);
-isGameRunning = false;
-ctx.fillStyle = 'rgba(0, 255, 0, 0.7)';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-ctx.fillStyle = '#fff';
-ctx.font = 'bold 30px monospace';
-ctx.textAlign = 'center';
-ctx.fillText('YOU WIN!', canvas.width / 2, canvas.height / 2);
-return;
-}
-placeFood();
-} else {
-snake.pop();
-}
-let newHead = { x: headX, y: headY };
-if (headX < 0 || headX >= canvas.width || headY < 0 || headY >= canvas.height || collision(newHead, snake)) {
-clearInterval(gameLoop);
-ctx.fillStyle = 'rgba(255, 0, 0, 0.6)';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-setTimeout(resetGame, 500);
-setTimeout(() => { gameLoop = setInterval(draw, 120); }, 500);
-return;
-}
-snake.unshift(newHead);
-}
-
-function collision(head, array) {
-for (let i = 0; i < array.length; i++) {
-if (head.x === array[i].x && head.y === array[i].y) return true;
-}
-return false;
-}
-</script>
+    function collision(head, array) {
+        for (let i = 0; i < array.length; i++) {
+            if (head.x === array[i].x && head.y === array[i].y) return true;
+        }
+        return false;
+    }
+    </script>
 </body>
 </html>
